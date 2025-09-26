@@ -30,6 +30,9 @@ jobs:
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Build Mod
         run: ./gradlew build
 
